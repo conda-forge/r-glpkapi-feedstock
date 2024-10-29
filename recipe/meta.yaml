@@ -35,6 +35,7 @@ requirements:
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
+    - gmp  # [win]
     - r-base
     - glpk
   run:
@@ -50,7 +51,6 @@ about:
   home: https://CRAN.R-project.org/package=glpkAPI
   license: GPL-3.0-only
   summary: R Interface to C API of GLPK, depends on GLPK Version >= 4.42.
-  license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
