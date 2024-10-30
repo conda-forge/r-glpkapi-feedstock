@@ -10,6 +10,8 @@ source:
     - {{ cran_mirror }}/src/contrib/glpkAPI_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/glpkAPI/glpkAPI_{{ version }}.tar.gz
   sha256: 10a387e00910692b071bdf5444becc302f461c7b3660208304f088aaa70424b3
+  patches:
+    - patches/0001-minimal-ucrt-libs.patch
 
 build:
   number: 2
@@ -35,7 +37,6 @@ requirements:
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
-    - gmp  # [win]
     - r-base
     - glpk
   run:
