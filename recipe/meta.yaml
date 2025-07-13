@@ -1,4 +1,4 @@
-{% set version = "1.3.4" %}
+{% set version = "1.3.4.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,12 +9,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/glpkAPI_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/glpkAPI/glpkAPI_{{ version }}.tar.gz
-  sha256: 10a387e00910692b071bdf5444becc302f461c7b3660208304f088aaa70424b3
+  sha256: 0044885d3f5ac3dba70444c27c0132f02a76bfe8a87c070b940c6c07ff1e5b04
   patches:
     - patches/0001-minimal-ucrt-libs.patch
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
